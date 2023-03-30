@@ -5,9 +5,9 @@
 
 using namespace std;
 
-int case1(string s, int index){
-    s.swap(i, i+1);
-}
+// int case1(string s, int index){
+//     s.swap(i, i+1);
+// }
 
 int solution(int n) {
     int answer = 0;
@@ -21,7 +21,7 @@ int solution(int n) {
     for(int i = 0; i < s.length(); i++){
         if(s[i] == '0'){
             if((s[i+1]) == '1'){
-                return case1(s, i);
+                return 10;
             }
         }
     }
@@ -31,7 +31,7 @@ int solution(int n) {
 
 int main(void){
 
-    cout << solution(1) <<endl;
+    cout << "Hello, World" <<endl;
 
     return 0;
 }
