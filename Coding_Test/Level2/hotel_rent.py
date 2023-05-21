@@ -1,5 +1,3 @@
-import sys
-
 
 def getStartTime(e: list):
     return e[0]
@@ -46,8 +44,6 @@ def solution(book_time):
             lastBookTime[index] = book_time[i][1]
     
     answer = len(lastBookTime)
-                
-    
     
     return answer
 
