@@ -51,17 +51,21 @@ def solution(m, n, startX, startY, balls):
         tmp.append(bLen)
         tmp.append(cLen)
         tmp.append(dLen)
-
+        print("before: ",end='')
+        print(tmp)
         if isMatch(startX,startY,ball):
+            print(str(startX) + " " + str(startY))
+            print(ball)
             if startX < ball[0]:
-                cLen = max(tmp)
+                tmp[2] = max(tmp)
             elif startX > ball[0]:
-                alen = max(tmp)
+                tmp[0] = max(tmp)
             elif startY < ball[1]:
-                dLen = max(tmp)
+                tmp[3] = max(tmp)
             elif startY > ball[1]:
-                bLen = max(tmp)
-
+                tmp[1] = max(tmp)
+        print("after: ", end='')
+        print(tmp)
 
         answer.append(min(tmp))
 
@@ -74,6 +78,6 @@ if __name__ == '__main__':
     n = 10
     startX = 3
     startY = 7
-    balls = [[7, 7], [2, 7], [7, 3]]
+    balls = [[1, 7], [2, 7], [7, 3]]
     result = solution(m,n,startX, startY, balls)
     print(result)
