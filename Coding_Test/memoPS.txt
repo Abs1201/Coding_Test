@@ -1,0 +1,15 @@
+    red nodes -. 
+    ctrl + drag -> get
+    alt + drag -> set
+    mb3 -> close tab
+
+    create widget, add to viewport 
+
+    opacity(불투명)
+
+    event construct in widget
+    get gamemode -> cast to gm_targetgame 
+
+    highlight+c -> add comments
+
+    
