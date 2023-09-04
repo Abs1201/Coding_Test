@@ -2,21 +2,25 @@
 
 using namespace std;
 
+#define ll long long
+
 int main(void){
 
-	int n;
+	ll n;
 	cin >> n;
-	cout << 2 << " " << 1 << endl;
+	if(n==1){
+		cout << 1;
+		return 0;
+	}
 	while(n!=1){
-		if(n%2!=0){
-			cout << n << " ";
-			n *= 3+1;
+		cout << n << " ";
+		if(n%2 == 0){
+			n /= 2;
 		}
 		else{
-			cout << n << " ";
-			n/=2;
+			n=n*3+1;
 		}
 	}
-	
+	cout << 1;
 	return 0;
 }
