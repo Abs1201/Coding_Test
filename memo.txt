@@ -1,0 +1,24 @@
+#define ll long long
+const int mxN = 1e5;
+
+set -> distinct
+이거 이진트리형태이고, 알아서 정렬되므로 append가 아닌 insert임.
+set<array<int,2>> s;
+s.insert({1,2});
+
+sort(pointer)
+ex) a[mxN], b[mxN]
+sort(a, a+n);
+
+array vs vector : 이거때메 따로 정적이나 동적할당으로 배열 잘 안쓰는듯.
+array길이는 미리 정해져야함. ex) array<int, 2> ar; (o)
+                                array<int, n> ar; (x)
+즉, append 불가.
+Function)
+    ar.at(1) = 5;
+    ar.size(); // sizeof 이건 일반 배열.
+    <algorithm> library로
+    sort(ar.begin(), ar.end()) 오름차순
+    sort(ar.rbegin(), ar.rend()) 내림차순
+
+

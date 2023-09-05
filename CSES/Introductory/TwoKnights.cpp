@@ -2,15 +2,15 @@
 
 using namespace std;
 
-#define ll longlong
+#define ll long long
 
 int main(void){
 
 	ll n;
 	cin >> n;
 	ll total,sub;
-	for(int i = 1; i <= n; i++){
-		total = i*i*(i*i-1);
+	for(ll i = 1; i <= n; i++){
+		total = i*i*(i*i-1)/2;
 		sub = 4*(i-1)*(i-2);
 		cout << total-sub << endl;
 	}
