@@ -6,9 +6,10 @@ int main(void){
 
 	int n;
 	cin >> n;
-	while(n!=1){
+	
+	for(int k = 0; k < n; k++){
 		
 	}
-	
+
 	return 0;
 }
