@@ -18,7 +18,7 @@ int main(void){
 			n /= 2;
 		}
 		else{
-			n=n*3+1;
+			n*=3+1;
 		}
 	}
 	cout << 1;

@@ -1,3 +1,0 @@
-ctrl + enter : next line
-
-ctrl + shift + enter : prev line
