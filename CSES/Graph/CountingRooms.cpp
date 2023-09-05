@@ -9,7 +9,7 @@ int n, m;
 string s[MxN];
 
 bool e(int i, int j){
-    return i>=0&&i<m&&j>=0&&j<n&&s[i][j]=='.';
+    return i>=0&&i<n&&j>=0&&j<m&&s[i][j]=='.';
 }
 void dfs(int i , int j){
     s[i][j]='#';
@@ -41,7 +41,7 @@ int main(void){
             }
         }
     }
-
+    cout << ans;
 
     return 0;
 }
