@@ -14,21 +14,17 @@ int main(void){
     for(int i=0; i<m; i++){
         cin >> b[i];
     }
-    sort(a, a+n);
-    sort(b, b+n);
-    int ans=0;
-    for(int i=0, j=0; i<n; i++){
+    sort(a,a+n);
+    sort(b,b+n);
+    for(int i=0, j=0; i<n; ++i){
         while(j<m&&b[j]<a[i]-k){
-            j++;
+            ++j;
         }
-        if(j>=m)break;
-        if(b[j]<=a[i]+k){
-            ans++;
-            j++;
+        if(j<m&&b[j]<=a[i]+k){
+            ++ans, ++j;
         }
     }
     cout << ans;
-
 
     return 0;
 }

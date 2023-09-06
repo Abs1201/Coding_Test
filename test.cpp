@@ -8,8 +8,11 @@ int main(void){
     s.insert(ar2);
     s.insert({2,-2});
     for(auto it=s.begin(); it!=s.end(); it++){
-        for(auto& e: *it){
-            cout << e << " ";
+        // for(auto& e: *it){
+        //     cout << e << " ";
+        // }
+        for(int i=0; i<(*it).size(); i++){
+            cout <<(*it)[i] << " ";
         }
         cout << endl;
     }

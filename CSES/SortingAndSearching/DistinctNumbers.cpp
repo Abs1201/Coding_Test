@@ -2,8 +2,6 @@
 
 using namespace std;
 
-const int index =1e9;
-int x[index];
 
 int main(void){
     int n;
