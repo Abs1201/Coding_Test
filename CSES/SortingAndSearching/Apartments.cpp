@@ -15,7 +15,7 @@ int main(void){
         cin >> b[i];
     }
     sort(a, a+n);
-    sort(b, b+n);
+    sort(b, b+m);
     int ans=0;
     for(int i=0, j=0; i<n; i++){
         while(j<m&&b[j]<a[i]-k){
@@ -27,6 +27,7 @@ int main(void){
             j++;
         }
     }
+
     cout << ans;
 
 

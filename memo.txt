@@ -5,6 +5,16 @@ set -> distinct
 이거 이진트리형태이고, 알아서 정렬되므로 append가 아닌 insert임.
 set<array<int,2>> s;
 s.insert({1,2});
+s.lower_bound(2); return beq 2;
+
+map
+이건 레드블랙_이진트리, 알아서 정렬됨 -> insert();
+if(mp.find(x-a)!=mp.end()){
+    ~~
+    return 0;
+}
+
+
 
 sort(pointer)
 ex) a[mxN], b[mxN]
