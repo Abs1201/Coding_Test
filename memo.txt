@@ -16,7 +16,8 @@ if(mp.find(x-a)!=mp.end()){
 
 
 
-sort(pointer)
+sort(pointer, pointer) // 정적배열
+sort(iterator, iterator) // array<>..
 ex) a[mxN], b[mxN]
 sort(a, a+n);
 
