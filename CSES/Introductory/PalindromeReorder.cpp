@@ -7,7 +7,7 @@ const int mxN=2e5;
 int main(void){
     string s;
     cin >> s;
-    char c[26]={}, c1=0;
+    int c[26]={}, c1=0;
     for(char d: s){
         ++c[d-'A'];
     }
@@ -18,7 +18,34 @@ int main(void){
         cout <<"NO SOLUTION";
         return 0;
     }
-    cout << "test" << endl;
+    string t="";
+    for(int i=0; i<26; i++){
+        if(c[i]&1^1){
+            for(int j=0; j<(c[i]/2); j++){
+                t+=(char)('A'+i);
+            }
+        }
+    }
+    cout << t;
+    for(int i=0; i<26; i++){
+        if(c[i]&1){
+            for(int j=0; j<c[i]; j++){
+                cout << (char)('A'+i);
+            }
+        }
+    }
+    // string ans=t;
+    // t="";
+    // for(int i=0; i<26; i++){
+    //     if(c[i]&1^1){
+    //         for(int j=0; j<(c[i]/2); j++){
+    //             t+=(char)('A'+i);
+    //         }
+    //     }
+    // }
+    reverse(t.begin(), t.end());
+    cout << t;
+
     return 0;
 } 
 //AAABAA
