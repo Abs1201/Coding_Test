@@ -4,6 +4,9 @@
         "xstring": "cpp",
         "algorithm": "cpp",
         "forward_list": "cpp",
-        "ostream": "cpp"
+        "ostream": "cpp",
+        "xutility": "cpp",
+        "iostream": "cpp",
+        "vector": "cpp"
     }
 }

@@ -2,7 +2,7 @@
 using namespace std;
 
 #define ll long long
-const int mxN=100, mxX=1e6, m=1e9+7;
+const int mxN=100, mxX=1e6, M=1e9+7;
 int n, c[mxN], x;
 ll dp[mxX+1];
 
@@ -12,13 +12,15 @@ int main(void){
     for(int i=0; i<n; i++){
         cin >> c[i];
     }
+    dp[0]=1;
     for(int i=1; i<=x; i++){
-        dp[i]=1e9;
         for(int j=0; j<n; j++){
-            if(c[j]<=i)
-                dp[i]=min(dp[i], dp[i-c[j]]+1);
+            if(i>=c[j]){
+                dp[i]=(dp[i]+dp[i-c[j]])%M;
+            }  
         }
     }
+    cout << dp[x];
 
     return 0;
 }

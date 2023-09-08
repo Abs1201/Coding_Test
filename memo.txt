@@ -14,6 +14,11 @@ if(mp.find(x-a)!=mp.end()){
     return 0;
 }
 
+find(v.begin(), v.end(), value);
+이거는 <algorightm.h>의 find.
+map.find(value)
+이거는 <map.h>의 find 
+애초에 map은 범위가 정해지지 않음. 그래서 따로 잇다.  
 
 
 sort(pointer, pointer) // 정적배열
@@ -32,4 +37,11 @@ Function)
     sort(ar.begin(), ar.end()) 오름차순
     sort(ar.rbegin(), ar.rend()) 내림차순
 
+sort(str.begin(), str.end(), std::greater<int>());
 
+
+if (str.find(c) != std::string::npos) {
+        std::cout << "Character found" << std::endl;
+    } else {
+        std::cout << "Character not found" << std::endl;
+    }
