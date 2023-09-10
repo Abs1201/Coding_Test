@@ -13,13 +13,14 @@ int main(void){
         cin >> c[i];
     }
     dp[0]=1;
-    for(int i=1; i<=x; i++){
-        for(int j=0; j<n; j++){
+    for(int j=0; j<n; j++){
+        for(int i=1; i<=x; i++){
             if(i>=c[j]){
-                dp[i]=dp[i]+dp[i-c[j]];
+                dp[i]=(dp[i]+dp[i-c[j]])%M;
             }
         }
     }
+    cout << dp[x];
 
     return 0;
 }

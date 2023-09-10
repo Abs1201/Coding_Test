@@ -5,7 +5,7 @@ using namespace std;
 const int mxN=1e6, m=1e9+7;
 vector<ll> dp(mxN, 0);
 
-int Dice(int n){ //it takes O(n^2)
+int Dice(int n){
     if(n==0) return 1;
     if(n<0) return 0;
     if(dp[n]!=0) return dp[n];

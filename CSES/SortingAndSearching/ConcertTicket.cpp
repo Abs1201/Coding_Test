@@ -13,10 +13,22 @@ int main(void){
         cin >> a;
         s.insert({a,i});
     }    
-    for(int i=0; i<m; i++){
-        int a;
+    // for(int i=0; i<m; i++){
+    //     int a;
+    //     cin >> a;
+    //     auto it=s.lower_bound({a+1,0});
+    //     if(it==s.begin()){
+    //         cout << -1 << endl;
+    //     }
+    //     else{
+    //         --it;
+    //         cout << (*it)[0] << endl;
+    //         s.erase(it);
+    //     }
+    // }
+    for(int i=0, a; i<m; i++){
         cin >> a;
-        auto it=s.lower_bound({a+1,0});
+        auto it=s.upper_bound({a,n});
         if(it==s.begin()){
             cout << -1 << endl;
         }

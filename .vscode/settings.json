@@ -7,6 +7,9 @@
         "ostream": "cpp",
         "xutility": "cpp",
         "iostream": "cpp",
-        "vector": "cpp"
+        "vector": "cpp",
+        "limits": "cpp",
+        "utility": "cpp",
+        "fstream": "cpp"
     }
 }
