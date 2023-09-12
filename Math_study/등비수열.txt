@@ -1,0 +1,12 @@
+url(등비수열): https://mathbang.net/611#gsc.tab=0
+url2(등비수열의 합): https://mathbang.net/612#gsc.tab=0
+
+Geometric progression(G.P) == 등비수열
+Common ratio(r) == 공비
+
+<주의>
+a1 != 0 이면 안됨.
+이유는 공비가 0이 됨.
+
+
+

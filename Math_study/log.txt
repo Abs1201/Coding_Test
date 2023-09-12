@@ -1,0 +1,21 @@
+url: https://mathbang.net/596#gsc.tab=0
+
+밑=지수 -> 1
+ex) 
+log2(2) =1
+..
+
+a^x=n
+a^y=m
+x=log(a)n
+y=log(a)m
+xy=log(a)nm
+result)log(a)n+log(a)m=log(a)nm
+log(a)n-log(a)m = log(a)n/m
+
+log(a)L^k == k*log(a)L
+
+주의) 밑이 같아야함. 지수법칙처럼.
+
+
+
