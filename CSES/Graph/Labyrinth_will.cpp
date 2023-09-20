@@ -2,8 +2,8 @@
 using namespace std;
 
 const int mxN=1e3;
-int n, m, si, sj, ti, tj, di[4]={0,0,-1,1}, dj[4]={-1,1,0,0}, d[mxN][mxN];
-char dc[4]={'L', 'R', 'U', 'D'};
+int n, m, si, sj, ti, tj, di[4]={-1,0,1,0}, dj[4]={0,-1,0,1}, d[mxN][mxN];
+char dc[4]={'U', 'L', 'D', 'R'};
 string s[mxN], p[mxN];
 
 bool e(int i, int j){
@@ -20,7 +20,7 @@ int main(void){
             if(s[i][j]=='B')
                 ti=i, tj=j, s[i][j]='.';
         }
-        p[i]=string(n,0);
+        p[i]=string(m,0);
     }
     queue<array<int, 2>> qu;
     qu.push({si, sj});
