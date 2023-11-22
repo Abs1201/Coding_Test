@@ -1,9 +1,10 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+#define ll long long
 const int mxN=1e5, mxM=2e5;
 int n, m, p[mxN];
-vector<int> adj[mxN], ans;
+vector<int> adj[mxN];
 
 int main(void){
     cin >> n >> m;
@@ -12,16 +13,16 @@ int main(void){
         adj[a].push_back(b);
         adj[b].push_back(a);
     }
-    memset(p,-1,sizeof(int)*n);
+    memset(p, -1, sizeof(int)*n);
     queue<int> qu;
     qu.push(0);
     while(qu.size()){
-        int u = qu.front();
+        int u=qu.front();
         qu.pop();
         for(int v: adj[u]){
             if(p[v]<0){
-                p[v]=u;
                 qu.push(v);
+                p[v]=u;
             }
         }
     }
@@ -29,16 +30,17 @@ int main(void){
         cout << "IMPOSSIBLE";
     }
     else{
+        vector<int> ans;
         int u=n-1;
-        while(u){
-            ans.push_back(u);
+        ans.push_back(u);
+        while(u>0){
+            ans.push_back(p[u]);
             u=p[u];
         }
-        ans.push_back(0);
         reverse(ans.begin(), ans.end());
         cout << ans.size() << endl;
-        for(int a: ans){
-            cout << a+1 << " ";
+        for(int u: ans){
+            cout << u+1 << " ";
         }
     }
 
