@@ -3,13 +3,14 @@ using namespace std;
 
 #define ll long long
 const int mxN=1e5, mxM=2e5;
-int n, m, c[mxN];
+int n, m, p[mxN];
 vector<int> adj[mxN], ans;
+bool vis[mxN];
 
-void dfs(int u, int cu=0){
+void dfs(int u, int pu=-1){
     p[u]=pu;
     vis[u]=1;
-    for(int v: adj[v]){
+    for(int v: adj[u]){
         if(v==pu)
             continue;
         if(vis[v]){

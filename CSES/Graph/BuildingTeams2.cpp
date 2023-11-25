@@ -2,21 +2,22 @@
 using namespace std;
 
 #define ll long long
-const int mxN=1e5, mxM=2e5;
-int n, m, c[mxN];
-vector<int> adj[mxN], ans;
+const int mxN=1e5, mxm=2e5;
+vector<int> adj[mxN];
+int p[mxN], n , m;
 
 void dfs(int u, int cu=0){
-    if(~c[u]){
-        if(c[u]^cu){
+    if(p[u]<0){
+        p[u]=cu;
+        for(int v: adj[u]){
+            dfs(v, cu^1);
+        }
+    }
+    else{
+        if(p[u]^cu){
             cout << "IMPOSSIBLE";
             exit(0);
         }
-        return;
-    }
-    c[u]=cu;
-    for(int v: adj[u]){
-        dfs(v, cu^1);
     }
 }
 
@@ -27,15 +28,16 @@ int main(void){
         adj[a].push_back(b);
         adj[b].push_back(a);
     }
-    memset(c, -1, sizeof(int)*n);
+    memset(p, -1, 4*n);
     for(int i=0; i<n; i++){
-        if(c[i]<0){
+        if(p[i]<0){
             dfs(i);
         }
     }
     for(int i=0; i<n; i++){
-        cout << c[i]+1 << " ";
+        cout << p[i]+1 << " ";
     }
-
+    
+    
     return 0;
 }
