@@ -10,7 +10,7 @@ bool vis[mxN];
 void dfs(int u, int pu=-1){
     p[u]=pu;
     vis[u]=1;
-    for(int v: adj[u]){
+    for(int v: adj[u]){     
         if(v==pu)
             continue;
         if(vis[v]){
