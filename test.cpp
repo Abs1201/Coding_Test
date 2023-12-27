@@ -18,9 +18,7 @@ int main(void){
     qu.push(3);
     qu.push(2);
     cout << "size: " << qu.size() << endl;
-    
-    
 
-
+    
     return 0;
 }
