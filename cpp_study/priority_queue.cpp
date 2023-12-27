@@ -10,27 +10,18 @@ using namespace std;
 //empty()
 //size()
 
-int main(void){
-    // priority_queue<int> pq; // == priority_queue<int, vector<int>, less<int>> pq;
-    // pq.push(4);
-    // pq.push(5);
-    // pq.push(11);
-    // pq.push(13);
-    // pq.push(2);
-    
-    // cout << pq.size() << '\n';
-
-    // while(pq.size()){
-    //     cout << pq.top() << '\n';
-    //     pq.pop();
-    // }
+int main(void) {
 
     priority_queue<int> pq;
     pq.push(4);
     pq.push(4);
     pq.push(5);
-    cout << "leggo" << '\n';
-    cout << pq.size() << '\n';
+    cout << "size: " << pq.size() << '\n';
+
+    while (pq.size()) {
+        cout << pq.top() << endl;
+        pq.pop();
+    }
 
     return 0;
 }
