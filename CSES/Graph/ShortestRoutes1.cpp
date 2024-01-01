@@ -2,31 +2,31 @@
 using namespace std;
 
 #define ll long long
-const int mxN=1e5, mxM=2e5, mxC=1e9;
-int n, m;
-vector<array<ll,2>> adj[mxN], 
-ll ans[mxN];
-bool vis[mxN];
+
+const int mxN=1e5, mxM=2e5;
+int n,m;
+vector<array<ll,2>> adj[mxN];
+ll d[mxN];
 
 int main(void){
     cin >> n >> m;
-    //n: node, m: line
-    for(int i=0, a, b, c; i<m; i++){
+    for(int i=0; i<m; i++){
+        int a, b, c;
         cin >> a >> b >> c, --a, --b;
-        adj[a].push_back({b, c});
-        adj[b].push_back({a, c});
+        adj[a].push_back({c,b});
     }
-    //priority_queue<array<ll,2>, vector<array<ll,2>, greater<array<ll,2>>> pq;
-    memset(ans, 0x3f, ans.size());
-    for(int i=0; i<n; i++){
-        if(!vis[i]){
-            for(int j=0; j<adj[i].size(); j++){
-                ans[adj[i][0]]=min(ans[i],adj[i][1]);
-            }
+    priority_queue<array<ll, 2>, vector<array<ll,2>>, greater<array<ll,2>>> pq;
+    pq.push({0,0});
+    d[0]=0;
+    while(pq.size()){
+        array<ll,2> u=pq.top();
+        pq.pop();
+        if(u[0]>d[d[1]]){
+            continue;
         }
-    }
-    for(int i=0; i<n; i++){
-        cout << ans[i];
+        for(array<ll,2> v: adj[u[1]]){
+            if(d[v[1]] > )
+        }
     }
 
     return 0;

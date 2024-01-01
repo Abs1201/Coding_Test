@@ -4,7 +4,7 @@ using namespace std;
 #define ll long long
 const int mxN=1e5, mxM=2e5, mxC=1e9;
 int n, m;
-vector<array<ll,2>> adj[mxN], 
+vector<array<ll,2>> adj[mxN];
 ll d[mxN];
 bool vis[mxN];
 
@@ -15,7 +15,7 @@ int main(void){
         cin >> a >> b >> c, --a, --b;
         adj[a].push_back({c, b});
     }
-    priority_queue<array<ll,2>, vector<array<ll,2>, greater<array<ll,2>>> pq;
+    priority_queue<array<ll,2>, vector<array<ll,2>>, greater<array<ll,2>>> pq;
 
     pq.push({0,0});
     memset(d, 0x3f, sizeof(d));
@@ -23,13 +23,13 @@ int main(void){
     while(pq.size()){
         array<ll,2> u =pq.top();
         pq.pop();
-        if(u[0]>d[u[1]]){//가중치 비교.
-            continue;
+        if(u[0]>d[u[1]]){
+            continue; 
         }
-        for(array<ll,2> v: adj[u[0]]){
+        for(array<ll,2> v: adj[u[1]]){
             if(d[v[1]]>d[u[1]]+v[0]){
                 d[v[1]]=d[u[1]]+v[0];
-                pq.push({d[v[1],v[1]]});
+                pq.push({d[v[1]],v[1]});
             }
         }
     }
