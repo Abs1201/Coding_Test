@@ -5,7 +5,6 @@ using namespace std;
 
 const int mxN=500;
 int n,m,q;
-vector<array<ll, 2>> adj[mxN];
 ll d[mxN][mxN];
 
 int main(void){
@@ -17,7 +16,13 @@ int main(void){
         adj[b].push_back({c,a});
     }
 
-    
+    for(int k=0; k<n; k++){
+        for(int i=0; i<n; k++){
+            for(int j=0; j<n; j++){
+                d[i][j]=min(d[i][j], d[i][k]+d[k][j]);
+            }
+        }
+    }
 
 
     for(int i=0; i<q; i++){

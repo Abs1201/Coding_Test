@@ -1,32 +1,22 @@
-#include <bits/stdc++.h>
+#include <iostream>
+#include <vector>
+#include <string>
+#include <memory>
+#include <cstring>
+
 using namespace std;
 
-#define ll long long
+int main()
+{
+    long long tmp[1000];
+    memset(tmp, 0x3f, 4*1000);
 
-const int mxN=1e5;
-int n, m;
-ll d[mxN]; 
-vector<array<ll, 2>> adj[mxN];
+    cout << tmp[0] << endl;
 
-int main(void){
-    cin >> n >> m;
-    for(int i=0; i<m; i++){
-        int a, b, c;
-        cin >> a >> b >> c, --a, --b;
-        adj[a].push_back({c,b});
-    }
+    int a = 0b00111111;
+    int b = 0x3f;
+    cout << a << endl;
+    cout << b << endl;
 
-    d[0]=0;
-    priority_queue<array<ll,2>, vector<array<ll,2>>, greater<array<ll,2>>> pq;
-    pq.push({0,0});
-    while(pq.size()){
-        array<ll,2> v=pq.top();
-        pq.pop();
-        if(v[0] > d[v[1]]){
-            continue;
-        }
-        for(array<ll,2> ar: )
-    }
-    
     return 0;
 }
