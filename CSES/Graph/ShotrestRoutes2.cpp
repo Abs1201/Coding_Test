@@ -9,15 +9,19 @@ ll d[mxN][mxN];
 
 int main(void){
     cin >> n >> m >> q;
+    memset(d, 0x3f, sizeof(d));
     for(int i=0; i<m; i++){
-        int a, b, c;
+        ll a, b, c;
         cin >> a >> b >> c, --a, --b;
-        adj[a].push_back({c,b});
-        adj[b].push_back({c,a});
+        d[a][b]=min(d[a][b], c);
+        d[b][a]=min(d[b][a], c);
     }
 
+    for(int i=0; i<n; i++){
+        d[i][i]=0;
+    }
     for(int k=0; k<n; k++){
-        for(int i=0; i<n; k++){
+        for(int i=0; i<n; i++){
             for(int j=0; j<n; j++){
                 d[i][j]=min(d[i][j], d[i][k]+d[k][j]);
             }
@@ -28,7 +32,7 @@ int main(void){
     for(int i=0; i<q; i++){
         int a, b;
         cin >> a >> b, --a, --b;
-        if(d[a][b] > 1e8){
+        if(d[a][b] > 1e18){
             cout << -1 << " ";
             continue;
         }

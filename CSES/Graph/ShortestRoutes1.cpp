@@ -21,7 +21,7 @@ int main(void){
     while(pq.size()){
         array<ll,2> u=pq.top();
         pq.pop();
-        if(u[0]>d[d[1]]){
+        if(u[0]>d[u[1]]){
             continue;
         }
         for(array<ll,2> v: adj[u[1]]){
