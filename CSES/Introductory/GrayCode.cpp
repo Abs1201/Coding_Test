@@ -7,11 +7,17 @@ int n;
 string ans[2e9];
 int main(void){
     cin >> n;
-    for(int i=1; i<=pow(2,n), i++){
-        for(int j=n+1; j>0; j--){
-            
-        }
-    }
+    // for(int i=0; i<pow(2,n), i++){
+    //     for(int j=n; j>0; j--){
+    //         if(j%2){
+                
+    //         }
+    //         else{
+
+    //         }
+    //     }
+    // }
+    for(int i=0; i<)
     
     
     return 0;
