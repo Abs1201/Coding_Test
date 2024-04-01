@@ -44,6 +44,8 @@ int main(void){
     a=a|b++;
     cout << a << endl;
 
+    i>>j&1;
+
     
     
     return 0;
