@@ -1,21 +1,23 @@
-#include <iostream>
+#include <bits/stdc++.h>
 using namespace std;
 
 int N, M;
 int arr[5];
-int main()
-{
-    freopen("input2.txt", "r", stdin);
-
-    cin >> N;
-
-    for (int i = 1; i <= N; i++)
-    {
-        cin >> arr[i];
+int main(){
+    vector<int> v ={1,2,3};
+    vector<int>::iterator iter;
+    for(iter=v.begin(); iter!=v.end(); iter++){
+        cout << *iter << ' ';
     }
+    cout << endl;
 
-    for (int i = 1; i <= N; i++)
-    {
-        cout << arr[i] << '\n';
-    }
+    cout << *(v.rbegin()) << endl;
+    cout << *(v.end()-1) << endl;
+
+    // int arr[5];
+    // fill(arr, arr+5, -1);
+    // for(int& a: arr){
+    //     cout << a << ' ';
+    // }
+    // cout << endl;
 }
