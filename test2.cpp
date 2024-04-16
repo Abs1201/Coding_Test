@@ -136,8 +136,7 @@ void printArray(int A[], int size)
 }
 
 // Driver code
-int main()
-{
+int main(){
     clock_t start, finish;
     double duration;
 	int arrSize;
