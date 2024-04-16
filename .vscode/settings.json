@@ -3,7 +3,8 @@
     "iostream": "cpp",
     "array": "cpp",
     "ostream": "cpp",
-    "cmath": "cpp"
+    "cmath": "cpp",
+    "map": "cpp"
   },
   "C_Cpp_Runner.cCompilerPath": "gcc",
   "C_Cpp_Runner.cppCompilerPath": "g++",
