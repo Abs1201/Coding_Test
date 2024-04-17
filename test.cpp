@@ -1,50 +1,15 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-void tmp(){
-    int a;
-    return;
-}
-
 int main(void){
 
-    set<int> s;
-    s.insert(10);
-    s.insert(20);
-    s.insert(20);
-    s.insert(20);
-    s.insert(40);
-    s.insert(70);
-    s.insert(40);
-    s.insert(50);
-
-    set<int>::iterator iter;
-    // int::iterator iter2;
-    for(iter=s.begin(); iter!=s.end(); iter++){
-        cout << *iter << endl;
-    }
-    for(iter=s.begin(); iter!=s.end(); ++iter){
-        cout << *iter << endl;
-    }
-    if(iter==s.end()){
-        cout << "all g" << endl;
-    }
-
-    // prefix, postfix
-    int a=10;
-    int b=++a;
-    cout << a << " " << b << endl;
-
-    a=10;
-    b=a++;
-    cout << a << " " << b << endl;
-
-    // Q1
-    a=1, b=2;
-    a=a|b++;
-    cout << a << endl;
-
-    i>>j&1;
+    set<pair<int, int>> s;
+    s.insert({0,8});
+    s.insert({0,4});
+    set<pair<int, int>>::iterator it;
+    // it=s.upper_bound({3,0});
+    it=s.upper_bound({0,3});
+    cout << it->first << " " << it->second << endl;
 
     
     

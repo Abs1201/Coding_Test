@@ -46,16 +46,33 @@ if (str.find(c) != std::string::npos) {
         std::cout << "Character not found" << std::endl;
     }
 
+240417++==============================================================
+set, multiset 차이: multiset은 key값 중복가능.
+Towers_geek.cpp -> multiset과 upper_bound()의 힘.
+
+map<ll, ll>  // set<pair<int,int>> 같은거 iterator->first, iterator->second 가능.
+
+map<>은 set<>처럼 트리형태라 sort가 됨.
+정렬이 필요없다면 unordered_map<>이 속도면에서는 좋음.
+그리고, 트리구조로 되있는 것들은 정렬이 되어있어서 그런지 upper_bound, lower_bound가 탑재됨.
+또한, 자료 넣을때 .insert() 반면 vector는 
+예시로, vector는 upper_bound,lower_bound가 없음.
 
 
-// arduino
-void setup(){
-    pinMode(13, OUTPUT);
-}
+자주쓰는거)
+    array 구조) .
+        vector<> // .push_back()
+        array<> // vector와 다른점: 배열길이 컴파일탐에 정해짐. 길이필요. 그래서 push_back자체가 없음.
+    tree 구조) .insert() .upper_bound, lower_bound()
+        set<>
+        multiset<> -- 앞으로 자주쓸듯.
+        map<>
+    
+전반적인 함수)
+    .erase() // array는 없음.
 
-void loop(){
-    digitalWrite(13, HIGH);
-    delay(1000);
-    digitalWrite(13, LOW);
-    delay(1000);
-}
+
+잘 안쓰는듯?)
+list<>
+unordered_map<>
+pair<> // make_pair({1,2});
