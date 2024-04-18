@@ -14,6 +14,7 @@ void solve(ll X, ll N, ll* P)
     range_lengths.insert(X);
 
     for (int i = 0; i < N; i++) {
+        // 3
         ll pos = P[i];
         // find the range in which pos lies
         auto it = ranges.upper_bound({ pos, 0 });
