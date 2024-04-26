@@ -1,46 +1,43 @@
 #include <bits/stdc++.h>
-#define ll long long 
+#define ll long long
 using namespace std;
 
 const int mxN=2e5;
 
-bool compare(array<ll,4> a, array<ll,4> b){
-    return a[2] < b[2];
-}
-
 int main(void){
-    vector<array<ll,4>> ms;
     ll n;
     cin >> n;
+    vector<array<ll, 3>> v;
     for(ll i=0, a, b; i<n; i++){
         cin >> a >> b;
-        ms.push_back({a, b, i, 0});
+        v.push_back({a, b, i});
     }
-    sort(ms.begin(), ms.end());
-    
-    vector<ll> v(1,0);
-    vector<array<ll,4>>::iterator it;
-    for(it=ms.begin(); it!=ms.end(); it++){
-        ll t=it->at(1);
-        for(int i=0; i<v.size(); i++){
-            if(v[i]<t){
-                v[i]=t;
-                it->at(3)=i;
-                continue;
-            }
-            if(i==v.size()-1){
-                v.push_back(t);
-                it->at(3)=i;
-            }
+    sort(v.begin(), v.end());
+
+    priority_queue<pair<ll,ll>, vector<pair<ll,ll>>, greater<pair<ll,ll>>> pq;
+    int roomCnt=0;        
+    ll ans[mxN];
+    ll t=v[0].at(1);
+
+    for(int i=0; i<n; i++){
+        ll idx=v[i].at(2);
+        if(pq.empty() || pq.top().first >=t){
+            roomCnt++;
+            pq.push({t, roomCnt});
+            ans[idx]=roomCnt;
+        }
+        else{
+            ll bIdx=pq.top().second;
+            pq.pop();
+            pq.push({t, bIdx});
+            ans[idx]=bIdx;
         }
     }
-    sort(ms.begin(), ms.end(), compare);
-    for(it=ms.begin(); it!=ms.end(); it++){
-        cout << it->at(3) << " ";
-    }
-    cout << endl;
 
-    
+    cout << roomCnt << endl;
+    for(int i=0; i<n; i++){
+        cout << ans[i] << " ";
+    }
 
 
     return 0;
