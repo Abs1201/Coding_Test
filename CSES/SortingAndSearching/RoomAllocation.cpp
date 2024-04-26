@@ -17,9 +17,8 @@ int main(void){
     priority_queue<pair<ll,ll>, vector<pair<ll,ll>>, greater<pair<ll,ll>>> pq;
     int roomCnt=0;        
     ll ans[mxN];
-    ll t=v[0].at(1);
-
     for(int i=0; i<n; i++){
+        ll t=v[i].at(1);
         ll idx=v[i].at(2);
         if(pq.empty() || pq.top().first >=t){
             roomCnt++;
