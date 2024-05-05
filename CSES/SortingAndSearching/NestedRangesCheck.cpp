@@ -26,8 +26,7 @@ int main(void){
     }
     sort(v.begin(), v.end(), compare);
     
-    ll big=v[0].at(1);
-    ll small=v[0].at(1);
+    ll max=v[0].at(1);
     for(int i=1; i<n; i++){
         if(v[i].at(1) <)
     }
