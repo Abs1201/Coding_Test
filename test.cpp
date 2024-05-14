@@ -3,10 +3,13 @@ using namespace std;
 
 int main(void){
 
-    vector<int> v(1,0);
-    cout << v.size() << endl;
-    cout << v[0] << endl;
-
+    stack<int> s;
+    s.push(3);
+    s.push(4);
+    cout << s.top() << endl;
+    s.pop();
+    int tmp=s.top();
+    cout << tmp << endl;
     
     
     return 0;
