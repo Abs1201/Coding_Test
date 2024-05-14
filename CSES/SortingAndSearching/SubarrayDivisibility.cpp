@@ -17,16 +17,16 @@ int main(void){
     ll pref=0;
     ll cnt=0;
     for(int i=0; i<n; i++){
-        pref=(pref+v[i])%n;
-        cnt+=m[abs(pref)];
-        m[abs(pref)]++;
+        pref=((pref+v[i])%n+n)%n;
+        cnt+=m[pref];
+        m[pref]++;
     }
  
     /*
-    3 1 2 7 4
-    3 4 1 3 2
- 
-    1 -
+    4
+    5 -65 -67 -67
+    5 -60 -127 -194
+    1 0 -3 -2
     */
  
     cout << cnt;
