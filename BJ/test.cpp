@@ -3,7 +3,8 @@
 using namespace std;
 
 int main(void){
-	cout << -65%4 << endl;
+	string s = "test";
+	cout << s[5] << endl;
 
 
 	return 0;

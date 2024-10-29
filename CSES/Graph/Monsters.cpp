@@ -19,14 +19,10 @@ int main()
     cin >> n >> m;
     for(int i=0; i<n; i++){
         cin >> s[i];
-        p[i]=string(m,0);
-    }
-    for(int i=0; i<n; i++){
-        for(int j=0; i<m; j++){
-            if(s[i][j]=='A'){
-                si=i, sj=j;
-            }
+        for(int j=0; j<m; j++){
+            if(s[i][j]=='A') si=i, sj=j;
         }
+        p[i]=string(m,0);
     }
     queue<array<int, 2>> qu;
     qu.push({si, sj});
