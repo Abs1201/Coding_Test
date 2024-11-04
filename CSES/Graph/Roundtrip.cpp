@@ -14,12 +14,13 @@ void dfs(int u, int pu=-1){
         if(v==pu)
             continue;
         if(vis[v]){
+            int u2=u;
             while(u^v){
                 ans.push_back(u);
                 u=p[u];
             }
             ans.push_back(v);
-            ans.push_back(u);
+            ans.push_back(u2);
             cout << ans.size() << "\n";
             for(int a: ans){
                 cout << a+1 << " ";
@@ -27,7 +28,7 @@ void dfs(int u, int pu=-1){
             exit(0);
         }
         else
-            dfs(v, u)
+            dfs(v, u);
     }
 }
 
