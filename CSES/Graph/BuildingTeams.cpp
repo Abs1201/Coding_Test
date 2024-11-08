@@ -7,8 +7,8 @@ int n, m, c[mxN];
 vector<int> adj[mxN], ans;
 
 void dfs(int u, int cu=0){
-    if(~c[u]){
-        if(c[u]^cu){
+    if(c[u] != -1){
+        if(c[u] != cu){
             cout << "IMPOSSIBLE";
             exit(0);
         }
