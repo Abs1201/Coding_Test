@@ -15,6 +15,7 @@ int main() {
         string s;
         cin >> s;
         bool b=1;
+        bool check=0;
         for(int i=0; i<s.size();){
             if(s[i]=='1'){
                 i++;
@@ -22,15 +23,13 @@ int main() {
                     b=0;
                     break;
                 }
-                else{
-                    i+=2;
-                }
-                while(i<s.size() && s[i]=='0'){
-                    i++;
-                }
+                else i+=2;
+                while(i<s.size() && s[i]=='0') i++;
                 if(i<s.size() && s[i]=='1'){
                     i++;
+                    check=0;
                     while(i<s.size() && s[i]=='1'){
+                        check=1;
                         i++;
                     }
                 }
@@ -39,20 +38,21 @@ int main() {
                     break;
                 }
             }
-            else{
+            else{   
                 i++;
                 if(i<s.size() && s[i]=='1'){
                     i++;
-
+                    check=0;
                 }
                 else{
-                    if(i<s.size() && s[i]=='0'){
-                        while(i<s.size() && s[i]=='0'){
-                            i++;
-                        }
+                    if(i<s.size() && s[i]=='0' && check){
+                        i++;
+                        while(i<s.size() && s[i]=='0') i++;
                         if(i<s.size() && s[i]=='1'){
                             i++;
+                            check=0;
                             while(i<s.size() && s[i]=='1'){
+                                check=1;
                                 i++;
                             }
                         }
@@ -61,10 +61,10 @@ int main() {
                             break;
                         }
                     }
-
-
-                    b=0;
-                    break;
+                    else{
+                        b=0;
+                        break;
+                    }
                 }
             }
         }

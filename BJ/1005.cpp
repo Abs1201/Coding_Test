@@ -49,6 +49,7 @@ int main(void){
             for (int e : adj[a]) {
                 inDegrees[e]--;
                 time[e] = max(time[e], time[a] + d[e]);
+                // d[e]=d[e]+d[a];
                 if (inDegrees[e] == 0) {
                     qu.push(e);
                 }
