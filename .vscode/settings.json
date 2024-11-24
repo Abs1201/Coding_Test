@@ -8,7 +8,10 @@
     "xtree": "cpp",
     "set": "cpp",
     "utility": "cpp",
-    "chrono": "cpp"
+    "chrono": "cpp",
+    "xhash": "cpp",
+    "xstring": "cpp",
+    "xutility": "cpp"
   },
   "C_Cpp_Runner.cCompilerPath": "gcc",
   "C_Cpp_Runner.cppCompilerPath": "g++",
