@@ -1,46 +1,53 @@
 #include <bits/stdc++.h>
-using namespace std;
-#define ll long long
 #define endl '\n'
+#define ll long long
+using namespace std;
+#define INF 1e9
+const int mxN=1e3;
 
-const int mxN=2000;
+int v, e, k;
+vector<pair<int, int>> graph[20001];
+vector<int> dist(20001, INF);
 
-int n, m;
-vector<int> v[mxN];
-bool vis[mxN];
+void dijkstra(int start){
+    priority_queue<pair<int,int>, vector<pair<int,int>>, greater<pair<int,int>>> pq;
+    pq.push({0,start});
+    dist[start] = 0;
+    
+    while(!pq.empty()){
+        int d = pq.top().first;
+        int node = pq.top().second;
+        pq.pop();
 
-bool dfs(int u, int uv=0){
-    vis[u]=1;
+        if(dist[node]<d) continue;
 
-    if(uv>=4){
-        return 1;
-    }
-    for(auto& e: v[u]){
-        if(!vis[e] && dfs(e, uv+1)){
-            return 1;
+        for(auto& edge: graph[node]){
+            int nextNode = edge.first;
+            int cost = d+edge.second;
+
+            if(cost < dist[nextNode]){
+                dist[nextNode] = cost;
+                pq.push({cost, nextNode});
+            }
         }
     }
-    vis[u]=0;
-    return 0;
 }
 
-
-int main() {
-    cin >> n >> m;
-    for(int i=0; i<m; i++){
-        int a, b;
-        cin >> a >> b;
-        v[a].push_back(b);
-        v[b].push_back(a);
+int gcd(int a, int b){
+    while(b!=0){
+        int tmp = a%b;
     }
-    bool b=0;
-    for(int i=0; i<n; i++){
-        memset(vis, 0, sizeof(vis));
-        // fill(vis, vis+mxN, 0);
-        b = dfs(i);
-        if(b) break;
-    }
-    cout << (b ? 1:0);
+}
 
-    return 0;
+int main(void){
+    ios::sync_with_stdio(false);
+    cin.tie(NULL);
+
+    int a, b;
+    cin >>a >> b;
+
+
+
+
+	return 0;
 }
